@@ -13,8 +13,19 @@
 			</h1>
 		</header>
 		<nav>
+			<ul>
+				<li>
+					<a href="">Membre</a>
+				</li>
+			</ul>
 		</nav>
-		<?php echo $vue; ?>
+		<div id="menu">
+			<?php echo $menu; ?>
+		</div>
+		<div id="content">
+			<?php echo $vue; ?>
+		</div>
+		<footer>© Bekaert Ludovic</footer>
 	</div>
 </body>
 </html>

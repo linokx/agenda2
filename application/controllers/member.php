@@ -6,8 +6,9 @@ class Member extends CI_Controller {
 	{
 
 		$this->load->helper('form');
-		$data['main_title'] = "Google+";
-		$data['vue'] = $this->load->view('member_form','',true);
+		$data['main_title'] = "Agenda";
+		$data['menu'] = $this->load->view('member_form','',true);
+		$data['vue'] = "Bienvenu";
 		$this->load->view('layout',$data);
 	}
 	public function login()
@@ -17,7 +18,7 @@ class Member extends CI_Controller {
 		$data['nom'] = $this->input->post('nom');
 		if($this->M_Member->verifier($data)){
 			$this->session->set_userdata('logged_in',true);
-			redirect('welcome');
+			redirect('index.php/agenda');
 		}
 		else
 		{
