@@ -1,7 +1,7 @@
-<div id="menu">
+
 	<div class="connect">
 		<?php
-			echo form_open('index.php/member/login',array('method'=>'post'));
+			echo form_open('member/login',array('method'=>'post'));
 			echo form_label('Login','nom');
 			$loginInput = array(
 						'name' => 'nom',
@@ -19,7 +19,4 @@
 			echo form_submit('check','Connexion');
 			echo form_close();
 		?>
-	</div>
-</div>
-<div id="content">
 	</div>

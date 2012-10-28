@@ -2,6 +2,12 @@
 
 class Member extends CI_Controller {
 
+	public function __construct(){
+		parent::__construct();
+		if($this->session->userdata('logged_in')){
+			redirect('agenda');
+		}
+	}
 	public function index()
 	{
 
@@ -17,8 +23,9 @@ class Member extends CI_Controller {
 		$data['mdp'] = $this->input->post('mdp');
 		$data['nom'] = $this->input->post('nom');
 		if($this->M_Member->verifier($data)){
-			$this->session->set_userdata('logged_in',true);
-			redirect('index.php/agenda');
+			$info = $this->M_Member->infos($data['nom']);
+			$this->session->set_userdata('logged_in',$info);
+			redirect('agenda');
 		}
 		else
 		{

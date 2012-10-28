@@ -2,64 +2,7 @@
 /************************************************
 /* RESTE MEYER
 ************************************************/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-font,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -79,8 +22,7 @@ body {
   color: black;
   background: white;
 }
-ol,
-ul {
+ol,ul {
   -list-style: none;
 }
 /************************************************
@@ -271,6 +213,9 @@ a.lien{
 	font-size:12px;
 	margin-bottom:1em;
 }
+a.lien~a{
+  float: right;
+}
 #menu {
   display: inline-block;
   width: 210px;
@@ -402,7 +347,17 @@ display:none;
 /*Travail*/
 .type_6{
 	background-color:grey;
-}#centre form{
+}
+
+#centre h3{
+border-radius: 5px 5px 0px 0px;
+  background-color: rgb(250,125,13);
+  background: -moz-linear-gradient(top, #f7931e, #ff6a00);
+  background: -webkit-gradient(linear, center top, center bottom, from(#f7931e), to(#ff6a00));
+  background: -o-linear-gradient(top, #f7931e, #ff6a00);
+  color:white;
+}
+#centre form{
 		line-height:25px;
 		
 	}

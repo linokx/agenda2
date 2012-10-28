@@ -2,20 +2,31 @@
 <html lang="fr-BE">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="<?php echo site_url().CSS_DIR;?>/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().CSS_DIR;?>/style.css" media="screen" />
 	<title><?php echo $main_title; ?></title>
 </head>
 <body>
 	<div id="conteneur">
 		<header>
 			<h1>
-				<a href="<?php echo site_url(); ?>" title="Page d'accueil" />Agenda</a>
+				<?php echo anchor('agenda', 'Agenda', 'title="Page d\'accueil"'); ?>
 			</h1>
 		</header>
 		<nav>
 			<ul>
 				<li>
-					<a href="">Membre</a>
+					<?php echo anchor('agenda', 'Agenda', 'title="Voir mon emploi du temps"'); ?>
+				</li>
+				<li><?php echo anchor('sortie', 'Sorties', 'title="Sorties dans les environs"'); ?>
+				</li>
+				<li>
+					<a href="">Amis</a>
+				</li>
+				<li>
+					<a href="">Messagerie</a>
+				</li>
+				<li>
+					<a href="">Profil</a>
 				</li>
 			</ul>
 		</nav>
