@@ -56,6 +56,8 @@ echo anchor('agenda/lister/'.$suivant, 'Semaine suivante >', array('title'=>"Voi
         foreach($rdvs as $agenda):
             $date_deb = explode('-',$agenda->date_deb);
             $date_fin = explode('-',$agenda->date_fin);
+            $date_deb[1] = element('1', $date_deb);
+            $date_deb[2] = element('2', $date_deb);
             //Si ca commence aujourd'hui
             if($date_auj[0]+$d == $date_deb[2])
             {

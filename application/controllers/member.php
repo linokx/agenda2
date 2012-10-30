@@ -2,20 +2,18 @@
 
 class Member extends CI_Controller {
 
-	public function __construct(){
+	/*public function __construct(){
 		parent::__construct();
 		if($this->session->userdata('logged_in')){
 			redirect('agenda');
 		}
-	}
+	}*/
 	public function index()
 	{
 
 		$this->load->helper('form');
-		$data['main_title'] = "Agenda";
-		$data['menu'] = $this->load->view('member_form','',true);
-		$data['vue'] = "Bienvenu";
-		$this->load->view('layout',$data);
+		$data['connexion'] = $this->load->view('member_form','',true);
+		$this->load->view('accueil',$data);
 	}
 	public function login()
 	{

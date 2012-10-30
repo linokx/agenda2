@@ -9,11 +9,13 @@
 	<div id="conteneur">
 		<header>
 			<h1>
-				<?php echo anchor('agenda', 'Agenda', 'title="Page d\'accueil"'); ?>
+				<?php echo anchor(base_url(), 'Agenda', 'title="Page d\'accueil"'); ?>
 			</h1>
-		</header>
-		<nav>
+		</header><nav>
 			<ul>
+				<li>
+					<?php echo anchor('member', 'Accueil', 'title="Page d\'accueil"'); ?>
+				</li>
 				<li>
 					<?php echo anchor('agenda', 'Agenda', 'title="Voir mon emploi du temps"'); ?>
 				</li>
@@ -22,8 +24,7 @@
 				<li>
 					<a href="">Amis</a>
 				</li>
-				<li>
-					<a href="">Messagerie</a>
+				<li><?php echo anchor('message', 'Message', 'title="Accéder à la messagerie"'); ?>
 				</li>
 				<li>
 					<a href="">Profil</a>
@@ -32,8 +33,7 @@
 		</nav>
 		<div id="menu">
 			<?php echo $menu; ?>
-		</div>
-		<div id="content">
+		</div><div id="content">
 			<?php echo $vue; ?>
 		</div>
 		<footer>© Bekaert Ludovic</footer>

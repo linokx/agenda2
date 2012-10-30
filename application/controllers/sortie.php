@@ -13,16 +13,30 @@ class Sortie extends CI_Controller {
 	}
 	public function lister()
 	{
+		$this->load->helper('form');
+		$dataMenu['mot'] = '';
+
+		if($this->input->post('mot') != null)
+		{
+			$dataMenu['mot'] = $data['mot'] = $this->input->post('mot');
+		}
 		$this->load->model('M_Sortie');
 		$data['distance'] = 500;
-		$data['lieux'] = $this->M_Sortie->lister($data);
+		$dataLayout['lieux'] = $this->M_Sortie->lister($data);
+		function cmp($a, $b) {
+   		if ($a->distance == $b->distance) {
+        	return 0;
+    	}
+    	return ($a->distance < $b->distance) ? -1 : 1;
+		}
+		
 		$latitude = 50;
 		$longitude = 5;
 		$i = 0;
-		foreach($data['lieux'] as $lieu)
+		foreach($dataLayout['lieux'] as $lieu)
 		{
 			$distance = round((6366*acos(cos(deg2rad($latitude))*cos(deg2rad($lieu->lat))*cos(deg2rad($lieu->lon) -deg2rad($longitude))+sin(deg2rad($latitude))*sin(deg2rad($lieu->lat))))*1000)/1000;
-			$data['lieux'][$i]->distance = ($distance < 1) ? $distance*1000 ."m": round($distance*10)/10 ."km"; 
+			$dataLayout['lieux'][$i]->distance = ($distance < 1) ? $distance*1000 ."m": round($distance*10)/10 ."km"; 
 			$i++;
 		}
 
@@ -37,15 +51,14 @@ class Sortie extends CI_Controller {
 									array('type' => 4,'texte' => 'Culturel'),
 									array('type' => 5,'texte' => 'Casino et Adulte'),
 									array('type' => 6,'texte' => 'Sport'));
-
+		uasort($dataLayout['lieux'], 'cmp');
 		$dataLayout['main_title'] = "Agenda";
 		$dataLayout['menu'] = $this->load->view('menu_sortie',$dataMenu,true);
-		$dataLayout['vue'] = $this->load->view('lister_sortie',$data,true);
+		$dataLayout['vue'] = $this->load->view('lister_sortie',$dataLayout,true);
 		$this->load->view('layout',$dataLayout);
 	}
 	public function ajouter()
 	{
-
 		$this->load->helper('form');
 		$this->load->model('M_Agenda');
 		$id = $this->session->userdata('logged_in');

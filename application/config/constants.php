@@ -41,3 +41,4 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 /* Location: ./application/config/constants.php */
 
 define('CSS_DIR','web/css');
+define('IMG_DIR','web/image');

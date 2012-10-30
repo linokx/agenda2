@@ -1,4 +1,22 @@
-
+<div class="sousmenu">
+<h3>Rechercher un lieu</h3>
+<?php
+            echo form_open('sortie',array('method'=>'post'));
+            $rechercheInput = array(
+                        'name' => 'mot',
+                        'id' => 'mot',
+                        'value' => $mot
+                        );
+            echo form_input($rechercheInput);
+            
+            echo form_submit('check','Rechercher');
+            echo form_close();
+        ?>
+</div>
+<div class="sousmenu">
+</div>
+<div class="sousmenu">
+<h3>Filtres</h3>
 <h4>Distance</h4>
 <p>
     <?php 
@@ -27,3 +45,4 @@
 <a href="">4</a>
 <a href="">5</a>
 </p>
+</div>

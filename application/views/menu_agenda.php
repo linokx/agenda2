@@ -1,3 +1,4 @@
+<div class="sousmenu">
 <p>
     <?php echo anchor('agenda', 'Afficher mon agenda', 'title="Voir mon agenda"'); ?>
     <?php echo anchor('agenda/voir', 'Voir l\'agenda d\'un ami', 'title="Agenda d\'un ami"'); ?>
@@ -19,6 +20,7 @@
         <?php endforeach; ?>
     </select>
 <?php endif; ?>
-    <input type="submit" value="Voir l'agenda" />
+    <input class="bouton" type="submit" value="Voir l'agenda" />
 </form>
 <p><?php echo anchor('agenda/ajouter', 'Ajouter un évênement', 'title="Nouvel évênement"'); ?></p>
+</div>

@@ -11,6 +11,9 @@
 			$this->db->select('*');
 			$this->db->from('lieu');
 			$this->db->where($formule.'<='.$distance);
+			if(!empty($data['mot'])){
+				$this->db->like('nom',$data['mot']);
+			}
 			
 			$query = $this->db->get();
 			return $query->result();
